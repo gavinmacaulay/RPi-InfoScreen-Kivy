@@ -1,0 +1,15 @@
+<ClockShutdownScreen>:
+    BoxLayout:
+        orientation: 'vertical'
+        Label:
+            font_name: "screens/clock/resources/SFDigitalReadout-Medium.ttf"
+            text: "[size=200]{h:02d}:{m:02d}[/size][size=100] {s:02d}[/size]".format(**root.timedata)
+            markup: True
+        BoxLayout:
+            orientation: 'horizontal'
+            size_hint: (0.3, 0.1)
+            pos_hint: {'center_x': 0.5}
+            Button:
+                id: shutdown_btn
+                text: root.btn_text
+                on_press: root.shut_down()

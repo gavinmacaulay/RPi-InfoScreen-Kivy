@@ -1,0 +1,12 @@
+{
+    "params": {
+        "updateInterval": 3600, 
+        "mapURL": "http://services.swpc.noaa.gov/images/aurora-forecast-northern-hemisphere.jpg", 
+        "mapURLSTORM": "https://www.tv2.no/s/pages/storm/assets/aurora-borealis/1.png", 
+        "mapURLtesting": "/home/pi/1.png"
+    }, 
+    "screen": "SpaceWeatherMap", 
+    "dependencies": [], 
+    "enabled": true, 
+    "kv": "map.kv"
+}

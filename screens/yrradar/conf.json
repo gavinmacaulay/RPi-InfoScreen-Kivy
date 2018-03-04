@@ -1,0 +1,11 @@
+{
+    "enabled": true, 
+    "screen": "YrRadarMap", 
+    "dependencies": [], 
+    "params": {
+        "mapURLtesting": "/home/pi/aurora/aurora_map.png", 
+        "mapURL": "http://api.met.no/weatherapi/radar/1.5/?radarsite=western_norway;type=reflectivity;content=image;size=normal", 
+        "updateInterval": 1800
+    }, 
+    "kv": "map.kv"
+}

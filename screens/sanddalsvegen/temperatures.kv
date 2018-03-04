@@ -1,0 +1,23 @@
+<SanddalsvegenTemperatures>:
+    BoxLayout:
+        orientation: 'vertical'
+        Label:
+            font_size: 85
+            halign: 'left'
+            text: root.outsideTemp
+        BoxLayout:
+            orientation: 'horizontal'
+            Label:
+                font_size: 20
+                halign: 'right'
+                line_height: 1.5
+                text: root.otherTemp
+            Label:
+                font_size: 20
+                halign: 'right'
+                line_height: 1.5
+                text: root.compostTemp
+        Label:
+            font_size: 15
+            text: root.timestamp
+

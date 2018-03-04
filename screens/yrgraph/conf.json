@@ -1,0 +1,13 @@
+{
+    "enabled": true, 
+    "screen": "YrGraphs", 
+    "dependencies": [], 
+    "params": {
+        "location2Name": "Bergen", 
+        "updateInterval": 3600, 
+        "imageName": "meteogram.png", 
+        "baseURL": "http://www.yr.no/place/Norway/Hordaland/Bergen", 
+        "location1Name": "Nesttun"
+    }, 
+    "kv": "graphs.kv"
+}

@@ -1,0 +1,5 @@
+{
+    "screen": "ClockShutdownScreen", 
+    "enabled": true, 
+    "kv": "clock.kv"
+}

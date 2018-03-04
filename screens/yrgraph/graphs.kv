@@ -1,0 +1,18 @@
+<YrGraphs>:
+    graph1: graph1
+    graph2: graph2
+    layout: layout
+
+    ScatterLayout:
+        id: layout
+        do_rotation: False
+        scale_min: 1
+        BoxLayout:
+            orientation: 'vertical'
+            AsyncImage:
+                id: graph1
+                source: root.graph1URL
+            AsyncImage:
+                id: graph2
+                source: root.graph2URL
+

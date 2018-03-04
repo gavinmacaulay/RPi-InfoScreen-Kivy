@@ -1,0 +1,6 @@
+{
+    "screen": "SanddalsvegenTemperatures", 
+    "dependencies": [], 
+    "enabled": true, 
+    "kv": "temperatures.kv"
+}
