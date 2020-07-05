@@ -34,11 +34,11 @@ class SanddalsvegenTemperatures(Screen):
 
     def update(self, *args):
         try:
-            t = requests.get('http://10.0.0.95/~pi/query_service.php').json()
+            t = requests.get('http://192.168.20.15/~pi/query_service.php').json()
         except ValueError:
             # We just try again a short time later
             sleep(0.1)
-            t = requests.get('http://10.0.0.95/~pi/query_service.php').json()
+            t = requests.get('http://192.168.20.15/~pi/query_service.php').json()
         except requests.exceptions.ConnectionError:
             self.outsideTemp = 'Connection error!'
             t = list()
@@ -47,22 +47,30 @@ class SanddalsvegenTemperatures(Screen):
         self.otherTemp = ''
 
         for m in t:
+            print(m)
+
+            if m['value'] is None:
+                value_str = ''
+            else:
+                value_str = '{:.1f}'.format(m['value'])
+
             if m['name'] == 'OutsideAir':
-                self.outsideTemp = '{:.1f}'.format(m['value']) + self.degreeSym
-		if m['value'] <= -10:
-		    self.outsideTemp += ', Arctic!!!'
-                elif m['value'] <= -5:
-                    self.outsideTemp += ', brrrr.....'
+                self.outsideTemp = value_str + self.degreeSym
+		if m['value'] is not None:
+                    if m['value'] <= -10:
+		        self.outsideTemp += ', Arctic!!!'
+                    elif m['value'] <= -5:
+                        self.outsideTemp += ', brrrr.....'
             elif m['name'] == 'CpuTemp':
                 pass
             elif m['name'].startswith('Compost'):
                 name = sub(r'([A-Z])', r' \1', str(m['name'])).split() # split on capital letters
                 name = [word.lower() for word in name] # make all lower case
                 name[0] = name[0].capitalize() # capitalise the first word
-                
-                self.compostTemp =  self.compostTemp + '\n' + ' '.join(name) + ': ' + '{:.1f}'.format(m['value']) + ' ' + self.degreeSym
+
+                self.compostTemp =  self.compostTemp + '\n' + ' '.join(name) + ': ' + value_str + ' ' + self.degreeSym
             else:
-                self.otherTemp = self.otherTemp + '\n' + str(m['name']) + ': ' + '{:.1f}'.format(m['value']) + ' ' + self.degreeSym
+                self.otherTemp = self.otherTemp + '\n' + str(m['name']) + ': ' + value_str + ' ' + self.degreeSym
 
         if len(t) > 0:
             # The time is UTC, and we want it in local time
