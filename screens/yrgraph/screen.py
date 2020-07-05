@@ -17,7 +17,7 @@ class YrGraphs(Screen):
 
     def on_enter(self):
         self.graph1URL = self.params["baseURL"] + '/' + self.params["location1Name"] + '/' + self.params["imageName"]
-        self.graph2URL = self.params["baseURL"] + '/' + self.params["location2Name"] + '/' + self.params["imageName"]
+        self.graph2URL = self.params["baseURL2"] + '/' + self.params["location2Name"] + '/' + self.params["imageName"]
         self.timer = Clock.schedule_interval(self.update, self.params["updateInterval"])
 
     def on_leave(self):

@@ -1,13 +1,14 @@
 {
-    "enabled": true, 
+    "params": {
+        "baseURL2": "http://www.yr.no/place/New_Zealand/Nelson", 
+        "location2Name": "Nelson", 
+        "baseURL": "http://www.yr.no/place/New_Zealand/Tasman", 
+        "imageName": "meteogram.png", 
+        "updateInterval": 3600, 
+        "location1Name": "Wakefield"
+    }, 
     "screen": "YrGraphs", 
     "dependencies": [], 
-    "params": {
-        "location2Name": "Bergen", 
-        "updateInterval": 3600, 
-        "imageName": "meteogram.png", 
-        "baseURL": "http://www.yr.no/place/Norway/Hordaland/Bergen", 
-        "location1Name": "Nesttun"
-    }, 
+    "enabled": true, 
     "kv": "graphs.kv"
 }
